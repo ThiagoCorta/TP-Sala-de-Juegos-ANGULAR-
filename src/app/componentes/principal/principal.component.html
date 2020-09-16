@@ -1,78 +1,73 @@
-<app-cabecera>  </app-cabecera>
+<div class="container-fluid">
+  <div class="carousel">
+    <ngb-carousel [interval]="3000" [wrap]="true">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            src="../../../assets/imagenes/start-image.jpg"
+            alt="Random first slide"
+          />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            src="../../../assets/imagenes/games-banner.jpg"
+            alt="Random second slide"
+          />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            src="../../../assets/imagenes/games2-banner.jpg"
+            alt="Random third slide"
+          />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="cards-container">
+      <div class="cards" routerLink="/Juegos">
+        <img
+          src="./assets/imagenes/saladejuegos.jpg "
+          alt=""
+          class="cards-img"
+        />
+        <div class="cards-content">
+          <h3>Lista de juegos disponibles en la aplicacion web</h3>
+        </div>
+      </div>
 
+      <div class="cards" routerLink="/Listado">
+        <img src="./assets/imagenes/jugadores.png" alt="" class="cards-img" />
+        <div class="cards-content">
+          <h3>Los listados de los resultados con ordenamiento y busqueda</h3>
+        </div>
+      </div>
 
+      <div class="cards" routerLink="/Jugadores">
+        <img
+          src="./assets/imagenes/Configuracion.jpg"
+          alt=""
+          class="cards-img"
+        />
+        <div class="cards-content">
+          <h3>Ajustes de la aplicacion y los métodos de autentificación</h3>
+        </div>
+      </div>
 
- 
-<div class="container" >
-   
-    <ul class="list-group">
-        <li class="list-group-item list-group-item-danger">
-           
-                <div class="media-body">
-                    <div class="hero-text">
-                        <h4 >Menú Principal</h4>
-                    </div>
-                 </div>
-               
-             
-          </li>
-        <li class="list-group-item list-group-item-success">
-          <a routerLink="/Juegos">
-            <div class="media">
-              <div class="media-left">
-                    <img src="./assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu" >
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Juegos</h4>
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item-info">
-            <a routerLink="/Listado">
-              <div class="media">
-                  <div class="media-left">
-                      <img src="./assets/imagenes/listado.jpg" class="media-object imagenDeMenu" >
-                    </div>
-                <div class="media-body">
-                  <h4 class="media-heading">Listados de resultados</h4>
-                  <p>Los listados de los resultados con ordenamiento y busqueda</p>
-                </div>
-                
-              </div> 
-            </a>
-          </li>
-        <li class="list-group-item list-group-item-warning">
-          <a routerLink="/Juegos">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
-                  </div>
-              <div class="media-body">
-                <h4 class="media-heading">Configuraci&oacute;n</h4>
-                <p>Ajustes de la aplicacion y los métodos de autentificación</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item-warning">
-          <a routerLink="/Jugadores">
-            <div class="media">
-                <div class="media-left">
-                    <img src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu" >
-                  </div>
-              <div class="media-body">
-                <h4 class="media-heading">Jugadores</h4>
-                <p>Listado de jugadores</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-       
-        
-      </ul>
+      <div class="cards" routerLink="/Jugadores">
+        <img
+          src="./assets/imagenes/total-jugadores.jpg"
+          alt=""
+          class="cards-img"
+        />
+        <div class="cards-content">
+          <h3>Lista del total de los jugadores</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
