@@ -2,5 +2,71 @@
 html,
 body {
   height: 100% !important;
-  overflow: auto;
+  background-color: black !important;
+}
+
+h1 {
+  color: white;
+}
+.cards-color {
+  background-color: #ececec;
+}
+
+.cards-container {
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.cards {
+  width: calc(20% - 10px);
+  overflow: hidden;
+}
+
+.cards-img {
+  width: 100%;
+  border-radius: 6px;
+  transition: 0.3s linear;
+}
+
+.cards-content {
+  background-color: #ffffff73;
+  margin: 0 20px;
+  padding: 30px;
+  color: white;
+  border-radius: 6px;
+  transform: translateY(-60px);
+  transition: 0.3s linear;
+}
+
+.cards-content h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 15px;
+  font-style: italic;
+  color: #e77f67;
+}
+
+.cards:hover .cards-img {
+  transform: translateY(20px);
+}
+
+.cards:hover .cards-content {
+  transform: translateY(-80px);
+}
+
+@media screen and (max-width: 1200px) {
+  .cards-container {
+    justify-content: center;
+  }
+  .cards {
+    width: min(600px, 100%);
+  }
 }

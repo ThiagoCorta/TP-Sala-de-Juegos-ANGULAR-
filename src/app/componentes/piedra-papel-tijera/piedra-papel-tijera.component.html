@@ -1,0 +1,38 @@
+<div class="container pt-5">
+  <div class="score-board">
+    <div class="badge" id="user-label">Usuario : {{ userSelected }}</div>
+    <div class="badge" id="comp-label">Maquina: {{ compSelected }}</div>
+    <span id="user-score">{{ userScore }}</span
+    >:<span id="comp-score">{{ compScore }}</span>
+  </div>
+
+  <div class="result">
+    <p *ngIf="status">
+      {{ userSelected }} {{ action }} {{ compSelected }}{{ status }}
+    </p>
+  </div>
+
+  <div class="choices">
+    <div class="choice" id="piedra">
+      <img
+        src="../../../assets/imagenes/piedra-slide.png"
+        (click)="userPick('piedra')"
+      />
+    </div>
+    <div class="choice" id="papel">
+      <img
+        src="../../../assets/imagenes/papel-slide.png"
+        (click)="userPick('papel')"
+      />
+    </div>
+    <div class="choice" id="tijera">
+      <img
+        src="../../../assets/imagenes/tijera-slide.png"
+        (click)="userPick('tijera')"
+      />
+    </div>
+  </div>
+
+  <p id="action-message" *ngIf="!status">Elegi tu movimiento</p>
+  <p id="action-message" *ngIf="status">Espera...</p>
+</div>

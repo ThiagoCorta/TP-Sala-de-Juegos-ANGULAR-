@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { JuegoAgilidad } from "../../clases/juego-agilidad";
 
-import { Subscription } from "rxjs";
-import { TimerObservable } from "rxjs/observable/TimerObservable";
 @Component({
   selector: "app-agilidad-aritmetica",
   templateUrl: "./agilidad-aritmetica.component.html",
@@ -15,29 +13,58 @@ export class AgilidadAritmeticaComponent implements OnInit {
   ocultarVerificar: boolean;
   Tiempo: number;
   repetidor: any;
-  private subscription: Subscription;
+
+  public primerNumero: number;
+  public segundoNumero: number;
+  public operador: string;
+  public operadores: string[] = ["*", "/", "+", "-"];
+  public calcular = {
+    "+": (x, y) => x + y,
+    "-": (x, y) => x - y,
+    "*": (x, y) => x * y,
+    "/": (x, y) => x / y,
+  };
+
   ngOnInit() {}
+
   constructor() {
     this.ocultarVerificar = true;
     this.Tiempo = 5;
     this.nuevoJuego = new JuegoAgilidad();
     console.info("Inicio agilidad");
   }
+
   NuevoJuego() {
     this.ocultarVerificar = false;
+    this.generarNumeros();
     this.repetidor = setInterval(() => {
       this.Tiempo--;
       console.log("llego", this.Tiempo);
       if (this.Tiempo == 0) {
-        clearInterval(this.repetidor);
         this.verificar();
-        this.ocultarVerificar = true;
-        this.Tiempo = 5;
       }
     }, 900);
   }
-  verificar() {
-    this.ocultarVerificar = false;
+
+  public generarNumeros(): void {
+    this.operador = this.operadores[Math.floor(Math.random() * 4)];
+    this.primerNumero = Math.floor(Math.random() * 9 + 1);
+    this.segundoNumero = Math.floor(Math.random() * 9 + 1);
+  }
+
+  public verificar(): void {
+    this.restart();
+    const numeroIng = this.nuevoJuego.numeroIngresado;
+    const operacion = this.calcular[this.operador](
+      this.primerNumero,
+      this.segundoNumero
+    );
+    this.nuevoJuego.gano = +operacion === +numeroIng;
+  }
+
+  public restart(): void {
     clearInterval(this.repetidor);
+    this.ocultarVerificar = true;
+    this.Tiempo = 5;
   }
 }

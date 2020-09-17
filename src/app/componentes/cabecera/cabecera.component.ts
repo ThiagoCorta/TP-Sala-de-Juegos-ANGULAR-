@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cabecera",
@@ -6,8 +7,30 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./cabecera.component.css"],
 })
 export class CabeceraComponent implements OnInit {
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  Juego(tipo: string) {
+    switch (tipo) {
+      case "Adivina":
+        this.router.navigate(["/Juegos/Adivina"]);
+        break;
+      case "Agilidad":
+        this.router.navigate(["/Juegos/Agilidad"]);
+        break;
+      case "AdivinaMasListado":
+        this.router.navigate(["/Juegos/AdivinaMasListado"]);
+        break;
+      case "AgilidadaMasListado":
+        this.router.navigate(["/Juegos/AgilidadaMasListado"]);
+        break;
+      case "PPT":
+        this.router.navigate(["/Juegos/PPT"]);
+        break;
+      case "Tateti":
+        this.router.navigate(["/Juegos/Tateti"]);
+        break;
+    }
+  }
 }

@@ -26,11 +26,6 @@ img {
   overflow: hidden;
   text-align: center;
 }
-
-.cards-color {
-  background-color: #ececec;
-}
-
 .cards-container {
   width: 100%;
   padding: 20px;

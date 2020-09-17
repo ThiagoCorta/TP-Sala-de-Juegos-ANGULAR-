@@ -54,6 +54,10 @@ import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { SquareComponent } from './componentes/tateti/square/square.component';
+import { ScoresheetComponent } from './componentes/tateti/scoresheet/scoresheet.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +83,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    PiedraPapelTijeraComponent,
+    TatetiComponent,
+    SquareComponent,
+    ScoresheetComponent
   ],
   imports: [
     BrowserModule,

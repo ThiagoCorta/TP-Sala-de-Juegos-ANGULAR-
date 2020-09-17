@@ -1,40 +1,90 @@
-<div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
+<div class="container-fluid pt-3 d-flex justify-content-center">
+  <div class="cards-container">
+    <div class="cards" (click)="Juego('Agilidad')">
+      <img
+        class="cards-img"
+        src="./assets/imagenes/cerebro.jpg"
+        alt="Avatar"
+        style="width: 100%"
+      />
+      <div class="cards-content">
+        <h3>
+          Velocidad y agilidad aritmética
+          <p class="title">Juego de agilidad mental</p>
+          <p>UTN FRA</p>
+        </h3>
+
+        <div class="d-flex justify-content-around">
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
     </div>
-  
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
+    <div class="cards" (click)="Juego('Adivina')">
+      <img
+        class="cards-img"
+        src="./assets/imagenes/adivina.png"
+        alt="Avatar"
+        style="width: 100%"
+      />
+      <div class="cards-content">
+        <h3>
+          Adivina el número secreto
+          <p class="title">Juega de estrategia</p>
+          <p>UTN FRA</p>
+        </h3>
+
+        <div class="d-flex justify-content-around">
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
+    <div class="cards" (click)="Juego('PPT')">
+      <img
+        class="cards-img"
+        src="./assets/imagenes/ppt.jpg"
+        alt="Avatar"
+        style="width: 100%"
+      />
+      <div class="cards-content">
+        <h3>
+          Piedra Papel o Tijera
+          <p class="title">Juega contra la máquina</p>
+          <p>UTN FRA</p>
+        </h3>
+        <div class="d-flex justify-content-around">
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="cards" (click)="Juego('Tateti')">
+      <img
+        class="cards-img"
+        src="./assets/imagenes/tateti.jpg"
+        alt="Avatar"
+        style="width: 100%"
+      />
+      <div class="cards-content">
+        <h3>
+          Ta-Te-Ti
+          <p class="title">Juega contra la máquina</p>
+          <p>UTN FRA</p>
+        </h3>
+        <div class="d-flex justify-content-around">
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
     </div>
   </div>
+</div>

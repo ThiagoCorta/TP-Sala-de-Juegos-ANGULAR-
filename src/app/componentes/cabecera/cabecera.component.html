@@ -17,6 +17,26 @@
           >GitHub <i class="fa fa-github"></i
         ></a>
       </li>
+      <li ngbDropdown class="nav-item dropdown d-inline-block">
+        <a
+          class="nav-link dropdown-toggle"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Juegos
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <a ngbDropdownItem (click)="Juego('Agilidad')">Agilidad</a>
+          <a ngbDropdownItem (click)="Juego('AdivinaMasListado')"
+            >Adivina+listado</a
+          >
+          <a ngbDropdownItem (click)="Juego('AgilidadaMasListado')"
+            >Agilidad+listado</a
+          >
+          <a ngbDropdownItem (click)="Juego('PPT')">PPT</a>
+          <a ngbDropdownItem (click)="Juego('Tateti')">Tateti</a>
+        </div>
+      </li>
       <li class="nav-item d-inline">
         <a routerLink="/Registro" class="nav-link"
           ><span class="glyphicon glyphicon-user"></span>Registrarse</a
