@@ -1,50 +1,53 @@
-.imagenDeQuienSoy {
-  width: 100%;
+i {
+  cursor: pointer;
 }
-body {
-  font: 20px Montserrat, sans-serif;
-  line-height: 1.8;
-  color: #f5f6f7;
-}
-p {
-  font-size: 16px;
-}
-.margin {
-  margin-bottom: 45px;
-}
-.bg-1 {
-  background-color: #1abc9c; /* Green */
-  color: #ffffff;
-}
-.bg-2 {
-  background-color: #474e5d; /* Dark Blue */
-  color: #ffffff;
-}
-.bg-3 {
-  background-color: #ffffff; /* White */
-  color: #555555;
-}
-.bg-4 {
-  background-color: #2f2f2f; /* Black Gray */
-  color: #fff;
-}
-.container-fluid {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-.navbar {
-  padding-top: 15px;
-  padding-bottom: 15px;
+hr {
+  height: 5px;
   border: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 5px;
+  box-shadow: 0 5px 5px -5px #fff inset;
 }
-.navbar-nav li a:hover {
-  color: #1abc9c !important;
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0 0 0;
+  color: #fff;
+  font-size: 70px;
+  font-family: "Fira Mono", monospace;
+  letter-spacing: -7px;
+  user-select: none;
+}
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 50px;
+    margin: 2rem 0 0 0;
+  }
+}
+.normal-font {
+  font-size: medium;
+  font-family: "Fira Mono", monospace;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .normal-font {
+    font-size: small;
+  }
+}
+
+.image-cropper {
+  width: 250px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 img {
-  height: 300px;
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
 }
