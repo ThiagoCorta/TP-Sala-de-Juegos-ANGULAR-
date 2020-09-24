@@ -6,6 +6,7 @@ import { AdivinaMasListadoComponent } from "../componentes/adivina-mas-listado/a
 import { AgilidadAritmeticaComponent } from "../componentes/agilidad-aritmetica/agilidad-aritmetica.component";
 import { AgilidadMasListadoComponent } from "../componentes/agilidad-mas-listado/agilidad-mas-listado.component";
 import { ErrorComponent } from "../componentes/error/error.component";
+import { GamepongComponent } from "../componentes/gamepong/gamepong.component";
 import { JuegosComponent } from "../componentes/juegos/juegos.component";
 import { JugadoresListadoComponent } from "../componentes/jugadores-listado/jugadores-listado.component";
 import { ListadoDePaisesComponent } from "../componentes/listado-de-paises/listado-de-paises.component";
@@ -42,6 +43,7 @@ const MiRuteo = [
       { path: "Agilidad", component: AgilidadAritmeticaComponent },
       { path: "PPT", component: PiedraPapelTijeraComponent },
       { path: "Tateti", component: TatetiComponent },
+      { path: "Gamepong", component: GamepongComponent },
     ],
   },
   { path: "**", component: ErrorComponent },

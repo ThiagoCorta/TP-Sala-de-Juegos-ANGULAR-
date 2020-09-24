@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <canvas #myCanvas id="myCanvas" width="480" height="320"></canvas>
+  <div class="row pt-4">
+    <div class="col">
+      <button class="btn btn-light" (click)="startGame()">Empezar!</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 class="score text-center">Ganaste {{ ganaste }} veces.</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 class="score text-center">Perdiste {{ perdiste }} veces.</h3>
+    </div>
+  </div>
+</div>

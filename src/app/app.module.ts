@@ -58,6 +58,7 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { SquareComponent } from './componentes/tateti/square/square.component';
 import { ScoresheetComponent } from './componentes/tateti/scoresheet/scoresheet.component';
+import { GamepongComponent } from './componentes/gamepong/gamepong.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { ScoresheetComponent } from './componentes/tateti/scoresheet/scoresheet.
     PiedraPapelTijeraComponent,
     TatetiComponent,
     SquareComponent,
-    ScoresheetComponent
+    ScoresheetComponent,
+    GamepongComponent
   ],
   imports: [
     BrowserModule,
