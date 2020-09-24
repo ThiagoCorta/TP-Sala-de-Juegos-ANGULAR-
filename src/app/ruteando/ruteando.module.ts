@@ -43,7 +43,7 @@ const MiRuteo = [
       { path: "Agilidad", component: AgilidadAritmeticaComponent },
       { path: "PPT", component: PiedraPapelTijeraComponent },
       { path: "Tateti", component: TatetiComponent },
-      { path: "Gamepong", component: GamepongComponent },
+      { path: "Arkanoid", component: GamepongComponent },
     ],
   },
   { path: "**", component: ErrorComponent },
