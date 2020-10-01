@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 import { ScoreSheet } from "./scoresheet/scoresheet";
 import { Square } from "./square/square";
 import { TatetiService } from "./tateti.service";
@@ -28,7 +29,10 @@ export class TatetiComponent implements OnInit {
   ];
 
   //* Injecting ScoreService
-  constructor(private scoreService: TatetiService) {}
+  constructor(
+    private scoreService: TatetiService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     //* Intializing the Game
@@ -93,6 +97,11 @@ export class TatetiComponent implements OnInit {
         this.squares[a] = { ...this.squares[a], win: true };
         this.squares[b] = { ...this.squares[b], win: true };
         this.squares[c] = { ...this.squares[c], win: true };
+        if (this.squares[a].player === "X") {
+          this.authService.gano();
+        } else {
+          this.authService.perdio();
+        }
         return this.squares[a].player;
       }
     }

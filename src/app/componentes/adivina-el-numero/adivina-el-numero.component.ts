@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 import { JuegoAdivina } from "../../clases/juego-adivina";
 
 @Component({
@@ -14,7 +15,7 @@ export class AdivinaElNumeroComponent implements OnInit {
   contador: number;
   ocultarVerificar: boolean;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.nuevoJuego = new JuegoAdivina();
     console.info("numero Secreto:", this.nuevoJuego.numeroSecreto);
     this.ocultarVerificar = false;
@@ -77,7 +78,9 @@ export class AdivinaElNumeroComponent implements OnInit {
     var x = document.getElementById("snackbar");
     if (ganador) {
       x.className = "show Ganador";
+      this.authService.gano();
     } else {
+      this.authService.perdio();
       x.className = "show Perdedor";
     }
     var modelo = this;

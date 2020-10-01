@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 
 @Component({
   selector: "app-gamepong",
@@ -15,6 +16,7 @@ import {
 export class GamepongComponent implements AfterViewInit {
   public ctx;
 
+  constructor(private authService: AuthService) {}
   // Pelota
   public ballRadius = 10;
   public x: number;
@@ -58,7 +60,6 @@ export class GamepongComponent implements AfterViewInit {
       this.leftPressed = true;
     }
   }
-  constructor() {}
 
   ngAfterViewInit() {
     this.ctx = this.canvas.nativeElement.getContext("2d");
@@ -174,7 +175,7 @@ export class GamepongComponent implements AfterViewInit {
       } else {
         clearInterval(this.interval);
         this.perdiste++;
-        console.log("perdiste");
+        this.authService.perdio();
         this.clear();
       }
     }
@@ -191,7 +192,7 @@ export class GamepongComponent implements AfterViewInit {
     }
     if (contador == this.brickColumnCount * this.brickRowCount) {
       clearInterval(this.interval);
-      console.log("ganaste");
+      this.authService.gano();
       this.ganaste++;
       this.clear();
     }

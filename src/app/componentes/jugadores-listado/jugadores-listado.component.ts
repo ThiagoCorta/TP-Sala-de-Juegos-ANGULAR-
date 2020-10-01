@@ -1,47 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { JugadoresService } from '../../servicios/jugadores.service';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { takeUntil, tap } from "rxjs/operators";
+import { Jugador } from "../../clases/jugador";
+import { Subject } from "rxjs";
+import { AuthService } from "../../servicios/auth.service";
 @Component({
-  selector: 'app-jugadores-listado',
-  templateUrl: './jugadores-listado.component.html',
-  styleUrls: ['./jugadores-listado.component.css']
+  selector: "app-jugadores-listado",
+  templateUrl: "./jugadores-listado.component.html",
+  styleUrls: ["./jugadores-listado.component.css"],
 })
-export class JugadoresListadoComponent implements OnInit {
-
-  listado:any
-  miJugadoresServicio:JugadoresService
-  
-    constructor(serviceJugadores:JugadoresService) {
-      this.miJugadoresServicio = serviceJugadores;
-      
-    }
-    
-
+export class JugadoresListadoComponent implements OnInit, OnDestroy {
+  public jugadores: Jugador[] = [];
+  protected ngUnsubscribe: Subject<any> = new Subject();
+  constructor(private rankingService: AuthService) {}
 
   ngOnInit() {
+    this.rankingService
+      .getAllPlayers()
+      .pipe(
+        takeUntil(this.ngUnsubscribe),
+        tap((jugadores) => console.log(jugadores))
+      )
+      .subscribe((jugadores) => (this.jugadores = jugadores));
   }
 
-
-  TraerTodos(){
-    //alert("totos");
-    this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
-      //console.info("jugadores listado",(data));
-      this.listado= data;
-
-    })
+  ngOnDestroy() {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
-  TraerGanadores(){
-    this.miJugadoresServicio.traertodos('jugadores/','ganadores').then(data=>{
-      //console.info("jugadores listado",(data));
-      this.listado= data;
-
-    })
-  }
-  TraerPerdedores(){
-    this.miJugadoresServicio.traertodos('jugadores/','perdedores').then(data=>{
-      //console.info("jugadores listado",(data));
-      this.listado= data;
-
-    })
-  }
-
 }

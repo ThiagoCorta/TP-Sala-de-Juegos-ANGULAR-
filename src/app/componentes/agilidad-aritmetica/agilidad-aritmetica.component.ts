@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 import { JuegoAgilidad } from "../../clases/juego-agilidad";
 
 @Component({
@@ -27,7 +28,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
   ngOnInit() {}
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.ocultarVerificar = true;
     this.Tiempo = 5;
     this.nuevoJuego = new JuegoAgilidad();
@@ -60,6 +61,11 @@ export class AgilidadAritmeticaComponent implements OnInit {
       this.segundoNumero
     );
     this.nuevoJuego.gano = +operacion === +numeroIng;
+    if (this.nuevoJuego.gano) {
+      this.authService.gano();
+    } else {
+      this.authService.perdio();
+    }
   }
 
   public restart(): void {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../servicios/auth.service";
 
 @Component({
   selector: "app-piedra-papel-tijera",
@@ -14,6 +15,7 @@ export class PiedraPapelTijeraComponent {
   public status: string;
   public compWeapons = ["piedra", "papel", "tijera"];
 
+  constructor(private authService: AuthService) {}
   userPick(userWeapon: string): void {
     this.userSelected = userWeapon;
     console.log(this.userSelected);
@@ -40,6 +42,7 @@ export class PiedraPapelTijeraComponent {
     this.action = "le gana";
     this.status = ". Ganaste!";
     this.clearField();
+    this.authService.gano();
   }
 
   lose(user, comp) {
@@ -49,6 +52,7 @@ export class PiedraPapelTijeraComponent {
     this.action = "Pierde Contra";
     this.status = ". Perdiste!";
     this.clearField();
+    this.authService.perdio();
   }
 
   draw(user, comp) {

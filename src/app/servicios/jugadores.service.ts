@@ -2,11 +2,7 @@ import { Injectable } from "@angular/core";
 import { ArchivosJugadoresService } from "./archivos-jugadores.service";
 @Injectable()
 export class JugadoresService {
-  //peticion:any;
-  constructor(public miHttp: ArchivosJugadoresService) {
-    // this.peticion = this.miHttp.traerJugadores();
-    //    this.peticion = this.miHttp.httpGetO("https://restcountries.eu/rest/v2/all");
-  }
+  constructor(public miHttp: ArchivosJugadoresService) {}
 
   filtrado: any;
 
