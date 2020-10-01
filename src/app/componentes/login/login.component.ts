@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 
 import { Subscription } from "rxjs";
 import { TimerObservable } from "rxjs/observable/TimerObservable";
-import { LoginPayload } from "src/app/clases/auth";
+import { LoginPayload } from "../../clases/auth";
 import { AuthService } from "../../servicios/auth.service";
 @Component({
   selector: "app-login",
