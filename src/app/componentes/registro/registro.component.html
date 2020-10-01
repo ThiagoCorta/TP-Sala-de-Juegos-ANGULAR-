@@ -58,13 +58,14 @@
           title="Close Modal"
           >×</span
         >
-        <form class="modal-content animate">
+        <form class="modal-content animate" [formGroup]="form">
           <div class="container">
             <label><b>Email</b></label>
             <input
               type="text"
               placeholder="Ingresa tu correo"
               name="email"
+              formControlName="email"
               required
             />
 
@@ -73,6 +74,7 @@
               type="password"
               placeholder="Aca la clave"
               name="psw"
+              formControlName="password"
               required
             />
 
@@ -102,7 +104,11 @@
                   >
                     Me arrepenti
                   </button>
-                  <button type="submit" class="btn signupbtn">
+                  <button
+                    type="submit"
+                    class="btn signupbtn"
+                    (click)="tryRegister()"
+                  >
                     Registrarme
                   </button>
                 </div>

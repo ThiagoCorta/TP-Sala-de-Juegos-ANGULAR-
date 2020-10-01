@@ -38,12 +38,12 @@
           <a ngbDropdownItem (click)="Juego('Arkanoid')">Arkanoid</a>
         </div>
       </li>
-      <li class="nav-item d-inline">
+      <li *ngIf="!(isLoged$ | async)" class="nav-item d-inline">
         <a routerLink="/Registro" class="nav-link"
           ><span class="glyphicon glyphicon-user"></span>Registrarse</a
         >
       </li>
-      <li class="nav-item">
+      <li *ngIf="!(isLoged$ | async)" class="nav-item">
         <a routerLink="/Login" class="nav-link"
           ><span class="glyphicon glyphicon-log-in"></span> Ingresar</a
         >

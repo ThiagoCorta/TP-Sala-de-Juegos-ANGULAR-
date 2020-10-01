@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
+import { AuthService } from "../../servicios/auth.service";
 
 @Component({
   selector: "app-cabecera",
@@ -7,9 +9,15 @@ import { Router } from "@angular/router";
   styleUrls: ["./cabecera.component.css"],
 })
 export class CabeceraComponent implements OnInit {
-  constructor(private router: Router) {}
+  public isLoged$: BehaviorSubject<boolean>;
+  constructor(private router: Router, private authService: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isLoged$ = this.authService.isLoged$;
+    this.isLoged$.subscribe((data) => {
+      console.log(data);
+    });
+  }
 
   Juego(tipo: string) {
     switch (tipo) {

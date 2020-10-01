@@ -10,12 +10,12 @@
         />
       </div>
 
-      <div class="container">
-        <label><b>Usuario</b></label>
+      <div class="container" [formGroup]="form">
+        <label><b>Email</b></label>
         <input
           type="text"
-          placeholder="Usuario"
-          [(ngModel)]="usuario"
+          placeholder="Email"
+          formControlName="email"
           name="uname"
           required
         />
@@ -24,33 +24,16 @@
         <input
           type="password"
           placeholder="Clave"
-          [(ngModel)]="clave"
+          formControlName="password"
           name="psw"
           required
         />
 
-        <button
-          class="btn btn-success"
-          *ngIf="logeando"
-          (click)="MoverBarraDeProgreso()"
-        >
-          Ingresar
-        </button>
+        <button class="btn btn-success" (click)="login()">Ingresar</button>
 
-        <div *ngIf="!logeando" class="progress">
-          <div
-            class="progress-bar progress-bar-info progress-bar-striped active"
-            [class]="clase"
-            role="progressbar"
-            aria-valuenow="10"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            [style.width]="ProgresoDeAncho"
-          >
-            {{ progresoMensaje }} - {{ progreso }}%
-          </div>
+        <div *ngIf="failedLogin" style="color: white">
+          Error al ingresar email o contraseña, intenta de nuevo.
         </div>
-
         <input type="checkbox" checked="checked" /> Recordar mis datos
       </div>
 
@@ -58,6 +41,9 @@
         <button type="button" class="cancelbtn">Cancelar</button>
         <button type="button" class="aceptbtn" routerLink="/Registro">
           Registrarse
+        </button>
+        <button type="button" class="aceptbtn" (click)="llenarLogin()">
+          Llenar Login
         </button>
         <span class="psw">Te olvidaste <a href="#">la clave?</a></span>
       </div>
