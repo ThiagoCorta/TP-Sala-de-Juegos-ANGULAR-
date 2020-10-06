@@ -43,6 +43,7 @@ import { JuegoServiceService } from "./servicios/juego-service.service";
 import { JugadoresService } from "./servicios/jugadores.service";
 import { MiHttpService } from "./servicios/mi-http/mi-http.service";
 import { PaisesService } from "./servicios/paises.service";
+import { MemotestComponent } from './componentes/memotest/memotest.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyB9AF796m5yv-WrN6Ygxc2ZXx_Vld4UcS4",
@@ -84,6 +85,7 @@ const firebaseConfig = {
     SquareComponent,
     ScoresheetComponent,
     GamepongComponent,
+    MemotestComponent,
   ],
   imports: [
     BrowserModule,

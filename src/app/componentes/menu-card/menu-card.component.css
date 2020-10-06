@@ -1,5 +1,5 @@
 .cards {
-  width: calc(30% - 11px);
+  width: calc(25% - 11px);
   overflow: hidden;
 }
 
@@ -12,4 +12,14 @@
   border-radius: 6px;
   transform: translateY(-60px);
   transition: 0.3s linear;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px) {
+  .cards-container {
+    justify-content: center;
+  }
+  .cards {
+    width: min(600px, 100%);
+  }
 }

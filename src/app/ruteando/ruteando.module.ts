@@ -5,6 +5,7 @@ import { AdivinaElNumeroComponent } from "../componentes/adivina-el-numero/adivi
 import { AdivinaMasListadoComponent } from "../componentes/adivina-mas-listado/adivina-mas-listado.component";
 import { AgilidadAritmeticaComponent } from "../componentes/agilidad-aritmetica/agilidad-aritmetica.component";
 import { AgilidadMasListadoComponent } from "../componentes/agilidad-mas-listado/agilidad-mas-listado.component";
+import { AnagramaComponent } from "../componentes/anagrama/anagrama.component";
 import { ErrorComponent } from "../componentes/error/error.component";
 import { GamepongComponent } from "../componentes/gamepong/gamepong.component";
 import { JuegosComponent } from "../componentes/juegos/juegos.component";
@@ -13,6 +14,7 @@ import { ListadoDePaisesComponent } from "../componentes/listado-de-paises/lista
 import { ListadoComponent } from "../componentes/listado/listado.component";
 import { LoginComponent } from "../componentes/login/login.component";
 import { MapaDeGoogleComponent } from "../componentes/mapa-de-google/mapa-de-google.component";
+import { MemotestComponent } from "../componentes/memotest/memotest.component";
 import { MenuCardComponent } from "../componentes/menu-card/menu-card.component";
 import { PiedraPapelTijeraComponent } from "../componentes/piedra-papel-tijera/piedra-papel-tijera.component";
 import { PrincipalComponent } from "../componentes/principal/principal.component";
@@ -44,6 +46,8 @@ const MiRuteo = [
       { path: "PPT", component: PiedraPapelTijeraComponent },
       { path: "Tateti", component: TatetiComponent },
       { path: "Arkanoid", component: GamepongComponent },
+      { path: "Anagrama", component: AnagramaComponent },
+      { path: "Memotest", component: MemotestComponent },
     ],
   },
   { path: "**", component: ErrorComponent },

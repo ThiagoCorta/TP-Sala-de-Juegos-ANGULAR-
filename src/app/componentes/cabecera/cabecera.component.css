@@ -6,6 +6,21 @@
   color: white !important;
 }
 
-.nav-link:hover {
-  background-color: #0b3430;
+.navbar-collapse.collapse.in {
+  display: block !important;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: darkblue; /* Whatever Colour you want */
+}
+
+button.navbar-toggle {
+  background: none;
+  border: none;
+  color: #000;
+}
+
+button.navbar-toggle span {
+  background: #000; /*change accordingly*/
 }

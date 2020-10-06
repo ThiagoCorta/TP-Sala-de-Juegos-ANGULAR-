@@ -27,8 +27,11 @@ export class CabeceraComponent implements OnInit {
       case "Agilidad":
         this.router.navigate(["/Juegos/Agilidad"]);
         break;
-      case "Adivina":
-        this.router.navigate(["/Juegos/Adivina"]);
+      case "AdivinaMasListado":
+        this.router.navigate(["/Juegos/AdivinaMasListado"]);
+        break;
+      case "AgilidadaMasListado":
+        this.router.navigate(["/Juegos/AgilidadaMasListado"]);
         break;
       case "PPT":
         this.router.navigate(["/Juegos/PPT"]);
@@ -38,6 +41,12 @@ export class CabeceraComponent implements OnInit {
         break;
       case "Arkanoid":
         this.router.navigate(["/Juegos/Arkanoid"]);
+        break;
+      case "Anagrama":
+        this.router.navigate(["/Juegos/Anagrama"]);
+        break;
+      case "Memotest":
+        this.router.navigate(["/Juegos/Memotest"]);
         break;
     }
   }
